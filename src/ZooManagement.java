@@ -12,7 +12,9 @@ public class ZooManagement {
         myZoo.name="Friguia";
         myZoo.city="Tunis";
         myZoo.nbrCages=;*/
-        Zoo myZoo = new Zoo("Friguia", "Sousse",50);
+        Zoo myZoo = new Zoo("Friguia", "Sousse");
+        Zoo scndZoo= new Zoo("Belvedere","Tunis");
+
 
         Animal lion = new Animal ("félidés", "Simba" ,5,true);
         Animal lion1 = new Animal ("félidés", "Nola" ,6,true);
@@ -26,7 +28,42 @@ public class ZooManagement {
         Animal chimpanzee  = new Animal("Hominidae", "Coco", 24, true);
         Animal chimpanzee1 = new Animal("Hominidae", "Cheeta", 17, true);
         Animal camel       = new Animal("Camelidae", "Sahara", 12, true);
-        Animal camel1      = new Animal("Camelidae", "Jamal", 9, true);
+
+        System.out.println(myZoo); //Zoo@7ef20235
+        System.out.println(myZoo.toString()); //Zoo@7ef20235
+        System.out.println(lion.toString());
+        System.out.println(lion);
+
+        System.out.println(myZoo.addAAnimal(lion));
+        System.out.println(myZoo.addAAnimal(elephant));
+        System.out.println(myZoo.addAAnimal(crocodile));
+        System.out.println(myZoo.addAAnimal(lion1));
+        System.out.println(myZoo.addAAnimal(zebra));
+        System.out.println(myZoo.addAAnimal(elephant1));
+
+        myZoo.displayZoo();
+
+        System.out.println(scndZoo.addAAnimal(tiger));
+        System.out.println(scndZoo.addAAnimal(tiger1));
+        System.out.println(scndZoo.addAAnimal(chimpanzee));
+        System.out.println(scndZoo.addAAnimal(chimpanzee1));
+        System.out.println(scndZoo.addAAnimal(camel));
+
+        scndZoo.displayAnimals();
+
+        System.out.println(myZoo.searchAnimal(elephant));
+
+        myZoo.removeAnimal(lion);
+
+        myZoo.displayAnimals();
+
+        System.out.println("La zoo la plus grande est "+Zoo.compareZoo(myZoo,scndZoo));
+
+    }
+}
+
+
+/*Animal camel1      = new Animal("Camelidae", "Jamal", 9, true);
         Animal giraffe     = new Animal("Giraffidae", "Zuri", 11, true);
         Animal giraffe1    = new Animal("Giraffidae", "Melman", 8, true);
         Animal hippo       = new Animal("Hippopotamidae", "Gloria", 20, true);
@@ -40,27 +77,10 @@ public class ZooManagement {
         Animal gorilla     = new Animal("Hominidae", "Kongo", 19, true);
         Animal squirrel    = new Animal("Sciuridae", "Nuts", 3, true);
         Animal jaguar     = new Animal("Felidae", "Diego", 12, true);
-        Animal tortoise    = new Animal("Testudinidae", "Methuselah", 70, false);
+        Animal tortoise    = new Animal("Testudinidae", "Methuselah", 70, false);*/
 
 
-        myZoo.displayZoo();
-        System.out.println(myZoo); //Zoo@7ef20235
-        System.out.println(myZoo.toString()); //Zoo@7ef20235
-        System.out.println(lion.toString());
-        System.out.println(lion);
-
-        System.out.println(myZoo.addAAnimal(lion));
-        System.out.println(myZoo.addAAnimal(elephant));
-        System.out.println(myZoo.addAAnimal(crocodile));
-        System.out.println(myZoo.addAAnimal(lion1));
-        System.out.println(myZoo.addAAnimal(zebra));
-        System.out.println(myZoo.addAAnimal(elephant1));
-        System.out.println(myZoo.addAAnimal(tiger));
-        System.out.println(myZoo.addAAnimal(tiger1));
-        System.out.println(myZoo.addAAnimal(chimpanzee));
-        System.out.println(myZoo.addAAnimal(chimpanzee1));
-        System.out.println(myZoo.addAAnimal(camel));
-        System.out.println(myZoo.addAAnimal(camel1));
+/*System.out.println(myZoo.addAAnimal(camel1));
         System.out.println(myZoo.addAAnimal(giraffe));
         System.out.println(myZoo.addAAnimal(giraffe1));
         System.out.println(myZoo.addAAnimal(hippo));
@@ -74,15 +94,4 @@ public class ZooManagement {
         System.out.println(myZoo.addAAnimal(gorilla));
         System.out.println(myZoo.addAAnimal(squirrel));
         System.out.println(myZoo.addAAnimal(jaguar));
-        System.out.println(myZoo.addAAnimal(tortoise));
-
-        myZoo.showAnimals();
-
-        System.out.println(myZoo.searchAnimal(tiger));
-
-
-
-
-
-    }
-}
+        System.out.println(myZoo.addAAnimal(tortoise));*/
