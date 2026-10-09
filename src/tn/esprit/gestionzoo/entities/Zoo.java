@@ -1,12 +1,14 @@
-public class Zoo {
-    String name;
-    String city;
-    final int NBR_CAGES=25;
-    int nbrAnimals=0;
-    Animal [] animals = new Animal[NBR_CAGES];
+package tn.esprit.gestionzoo.entities;
+
+public  class Zoo {
+    private String name;
+    private String city;
+    private final int NBR_CAGES=25;
+    private int nbrAnimals=0;
+    private Animal [] animals = new Animal[NBR_CAGES];
 
     public Zoo(String name, String city){
-        this.name=name;
+        setName(name);
         this.city=city;
         //this.nbrCages=nbrCages;
         this.animals= new Animal[NBR_CAGES];
@@ -20,15 +22,30 @@ public class Zoo {
         return "zoo{" + "Nom: " + name + " Ville: " + city + " Nombre de cages: " + NBR_CAGES + "}";
     }
 
-    public boolean addAAnimal(Animal animal){
-        /*if (nbrAnimals < animals.length){
-            animals[nbrAnimals]=animal;
-            nbrAnimals++;
-            //System.out.println(nbrAnimals);
-            return true;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if(name!=null || !name.isEmpty()){
+            this.name=name;
         }else
-            return false;*/
-        if (nbrAnimals>=animals.length){
+            System.out.println("Le tn.esprit.gestionzoo.entities.Zoo doit avoir un nom valide!");
+
+
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+
+    public boolean addAAnimal(Animal animal){
+        if (isZooFull()){
             System.out.println("le nombre des animaux est depasse !");
             return false;
         }
@@ -49,7 +66,7 @@ public class Zoo {
 
     public int searchAnimal(Animal animal){
         for(int i=0;i<nbrAnimals;i++){
-            if(animals[i].name.equals(animal.name)) { //'==' compare l'@ memoire .equals() compare le contenu
+            if(animals[i].getName().equals(animal.getName())) { //'==' compare l'@ memoire .equals() compare le contenu
                 return i;
             }
         }
