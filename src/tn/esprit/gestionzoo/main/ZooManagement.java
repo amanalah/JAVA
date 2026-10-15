@@ -1,7 +1,12 @@
 package tn.esprit.gestionzoo.main;
 
 import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Aquatic;
 import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.Aquatic;
+import tn.esprit.gestionzoo.entities.Terrestrial;
+import tn.esprit.gestionzoo.entities.Dolphin;
+import tn.esprit.gestionzoo.entities.Penguin;
 
 
 public class ZooManagement {
@@ -9,6 +14,12 @@ public class ZooManagement {
         Zoo myZoo = new Zoo("Friguia", "Sousse");
         Zoo scndZoo= new Zoo("Belvedere","Tunis");
 
+        Aquatic aquatic1= new Aquatic("Pomacentridés","Nemo",2,false,"Ocean");
+        Terrestrial terrestrial1= new Terrestrial("félidés","Lola",5,true,4);
+        Dolphin dolphin1= new Dolphin("delphinidés","Flipper",8,true,"Océan Atlantique", 12.5F);
+        Penguin penguin1= new Penguin("Sphéniscidés","Pingu",4,false, "Océan Antarctique", 200F );
+        // ERREUR: il n'y a pas de constructeur parametre
+        //Lorsqu;on cree des contructeurs parametres on doit les utiliser lors d'intialisation des instances.
 
         Animal lion = new Animal("félidés", "Simba" ,5,true);
         Animal lion1 = new Animal("félidés", "Nola" ,6,true);
@@ -28,6 +39,8 @@ public class ZooManagement {
         System.out.println(lion.toString());
         System.out.println(lion);
 
+        System.out.println("==============================");
+
         System.out.println(myZoo.addAAnimal(lion));
         System.out.println(myZoo.addAAnimal(elephant));
         System.out.println(myZoo.addAAnimal(crocodile));
@@ -35,7 +48,11 @@ public class ZooManagement {
         System.out.println(myZoo.addAAnimal(zebra));
         System.out.println(myZoo.addAAnimal(elephant1));
 
+        System.out.println("==============================");
+
         myZoo.displayZoo();
+
+        System.out.println("==============================");
 
         System.out.println(scndZoo.addAAnimal(tiger));
         System.out.println(scndZoo.addAAnimal(tiger1));
@@ -43,15 +60,39 @@ public class ZooManagement {
         System.out.println(scndZoo.addAAnimal(chimpanzee1));
         System.out.println(scndZoo.addAAnimal(camel));
 
+        System.out.println("==============================");
+
         scndZoo.displayAnimals();
+
+        System.out.println("==============================");
 
         System.out.println(myZoo.searchAnimal(elephant));
 
+        System.out.println("==============================");
+
         myZoo.removeAnimal(lion);
+
+        System.out.println("==============================");
 
         myZoo.displayAnimals();
 
+        System.out.println("==============================");
+
         System.out.println("La zoo la plus grande est "+ Zoo.compareZoo(myZoo,scndZoo));
+
+        System.out.println("==============================");
+        //on doit redifinir toSting pour presenter les information
+        System.out.println(aquatic1);
+        System.out.println(terrestrial1);
+        System.out.println(dolphin1);
+        System.out.println(penguin1);
+
+        System.out.println("==============================");
+
+        aquatic1.swim();
+        dolphin1.swim();
+        penguin1.swim();
+
 
     }
 }
