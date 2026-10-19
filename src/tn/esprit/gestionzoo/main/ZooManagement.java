@@ -14,11 +14,9 @@ public class ZooManagement {
         Zoo myZoo = new Zoo("Friguia", "Sousse");
         Zoo scndZoo= new Zoo("Belvedere","Tunis");
 
-       // Aquatic aquatic1= new Aquatic("Pomacentridés","Nemo",2,false,"Ocean");
-        Aquatic aquatic1= new Dolphin("delphinidés","Nemo",2,false,"Ocean",10F);
+        Aquatic aquatic1= new Aquatic("Pomacentridés","Nemo",2,false,"Ocean");
         Terrestrial terrestrial1= new Terrestrial("félidés","Lola",5,true,4);
         Dolphin dolphin1= new Dolphin("delphinidés","Flipper",8,true,"Océan Atlantique", 12.5F);
-        Dolphin dolphin2= new Dolphin("delphinidés","Flipper",8,true,"Océan Atlantique", 12.5F);
         Penguin penguin1= new Penguin("Sphéniscidés","Pingu",4,false, "Océan Antarctique", 200F );
         // ERREUR: il n'y a pas de constructeur parametre
         //Lorsqu;on cree des contructeurs parametres on doit les utiliser lors d'intialisation des instances.
@@ -94,24 +92,6 @@ public class ZooManagement {
         aquatic1.swim();
         dolphin1.swim();
         penguin1.swim();
-
-        System.out.println("==============Ajout des animaux aquatiques dans le tableau================");
-        myZoo.addAquaticAnimal(dolphin1);
-        myZoo.addAquaticAnimal(penguin1);
-        myZoo.addAquaticAnimal(aquatic1);
-
-        System.out.println("==============================");
-        myZoo.AnimalSwim();
-        System.out.println("==============================");
-        System.out.println("La profondeur maximale est: "+myZoo.maxPenguinSwimmingDepth());
-        System.out.println("==============================");
-        myZoo.displayNumberOfAquaticsByType();
-        System.out.println("==============================");
-        System.out.println(dolphin1.equals(dolphin2));
-
-
-
-
 
 
     }

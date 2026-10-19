@@ -8,12 +8,6 @@ public class Penguin extends Aquatic{
         super(family, name, age, isMammal, habitat);
         this.swimmingDepth=swimmingDepth;
     }
-
-    public float getSwimmingDepth() {
-        return swimmingDepth;
-    }
-
-    @Override
     public void swim(){
         System.out.println("This penguin is swimming");
     }
